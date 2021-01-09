@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+</head>
+<style>
+body {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 width: 100vw;
+	 height: 100vh;
+	 overflow: hidden;
+	 background-color: #171723;
+}
+ .canvas {
+	 position: relative;
+	 width: 100%;
+	 height: 100%;
+	 max-width: 500px;
+	 max-height: 500px;
+}
+ .triangle {
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 width: 300px;
+	 max-width: 300px;
+	 height: 300px;
+	 border-bottom: 4px solid;
+	 transform-origin: 50% 71%;
+	 transform: translate(-50%, -50%);
+}
+ .triangle, .triangle::before, .triangle::after {
+	 border-radius: 4px;
+}
+ .triangle::before, .triangle::after {
+	 content: '';
+	 position: absolute;
+	 bottom: 0;
+	 display: block;
+	 width: 100%;
+	 height: 100%;
+}
+ .triangle::before {
+	 left: 0;
+	 border-left: 4px solid;
+	 transform-origin: calc(0% + 4px) calc(100% - 4px);
+	 transform: translateY(4px) rotate(30deg);
+}
+ .triangle::after {
+	 right: 0;
+	 height: 100%;
+	 border-right: 4px solid;
+	 transform-origin: calc(100% - 4px) calc(100% - 4px);
+	 transform: translateY(4px) rotate(-30deg);
+}
+ @keyframes triangle-rotation-1 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.975);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.975);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(1) {
+	 animation: triangle-rotation-1 5s infinite;
+}
+ @keyframes triangle-rotation-2 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.875);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-30grad) scale(0.875);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(30grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(2) {
+	 animation: triangle-rotation-2 5s infinite;
+}
+ @keyframes triangle-rotation-3 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.775);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-60grad) scale(0.775);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(60grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(3) {
+	 animation: triangle-rotation-3 5s infinite;
+}
+ @keyframes triangle-rotation-4 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.675);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-90grad) scale(0.675);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(90grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(4) {
+	 animation: triangle-rotation-4 5s infinite;
+}
+ @keyframes triangle-rotation-5 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.575);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-120grad) scale(0.575);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(120grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(5) {
+	 animation: triangle-rotation-5 5s infinite;
+}
+ @keyframes triangle-rotation-6 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.475);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-150grad) scale(0.475);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(150grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(6) {
+	 animation: triangle-rotation-6 5s infinite;
+}
+ @keyframes triangle-rotation-7 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.375);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-180grad) scale(0.375);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(180grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(7) {
+	 animation: triangle-rotation-7 5s infinite;
+}
+ @keyframes triangle-rotation-8 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.275);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-210grad) scale(0.275);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(210grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(8) {
+	 animation: triangle-rotation-8 5s infinite;
+}
+ @keyframes triangle-rotation-9 {
+	 0%, 10% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 20%, 30% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(0.175);
+	}
+	 50% {
+		 transform: translate(-50%, -50%) rotate(-240grad) scale(0.175);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+	 60%, 80% {
+		 transform: translate(-50%, -50%) rotate(240grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+	 100% {
+		 transform: translate(-50%, -50%) rotate(0grad) scale(1);
+		 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+	}
+}
+ .triangle:nth-child(9) {
+	 animation: triangle-rotation-9 5s infinite;
+}
+ .triangle--aqua, .triangle--aqua::before, .triangle--aqua::after {
+	 border-color: aqua;
+}
+ .triangle--gold, .triangle--gold::before, .triangle--gold::after {
+	 border-color: gold;
+}
+ .triangle--tomato, .triangle--tomato::before, .triangle--tomato::after {
+	 border-color: tomato;
+}
+ 
+
+</style>
+
+<body>
+
+<div class="canvas">
+    <div class="triangle triangle--aqua"></div>
+    <div class="triangle triangle--gold"></div>
+    <div class="triangle triangle--tomato"></div>
+    <div class="triangle triangle--aqua"></div>
+    <div class="triangle triangle--gold"></div>
+    <div class="triangle triangle--tomato"></div>
+    <div class="triangle triangle--aqua"></div>
+    <div class="triangle triangle--gold"></div>
+    <div class="triangle triangle--tomato"></div>
+</div>
+
+</body>
+</html>
